@@ -1,18 +1,27 @@
 <%- include ("partials/header")%>
+<div style="margin-top: 70px;">
 <div class="ui container">
-<h1> 
-	Index page
-</h1>
+<h2 style="text-align: center;"> 
+	<i>Read Your Favorite Blogs Now!</i>
+</h2>
+<div style="margin-top: 50px;">
+<div class="row">
 <% blogs.forEach(function(blog){%>
-						   <div>
+						  
+						   <div class="col-md-4" style="margin-bottom: 30px;" data-aos="fade-up">
 							   <h2>
 								   <a href="/blogs/<%=blog._id%>"> <%= blog.title %></a>
 							   </h2>
+							   <div>
 							 <img src="<%=blog.image%>">
-							   <span><%= blog.created%></span>
-								   <p><%=blog.body.substring(0,100)%>....</p>
 							   </div>
-						   
+							   <span><%= blog.created%></span>
+								   <p style="margin-top: 10px; width:85%;text-align: center;"><%=blog.body.substring(0,150)%>....<a href="/blogs/<%=blog._id%>">Read More</a></a></p>
+							   </div>
+						 
 						   <%})%>
+</div>
+</div>
+</div>
 </div>
 <%- include ("partials/footer")%>

@@ -1,5 +1,6 @@
 <%- include ("partials/header")%>
-<div class="ui main text container segment">
+<div style="padding-top: 70px;">
+<div class="ui main text container segment" data-aos="flip-left">
 	<div class="ui huge header">
 		<%=blog.title%>
 	</div>
@@ -7,7 +8,7 @@
 		<div class="item">
 			<img class="ui centered rounded image" src="<%=blog.image%>">
 			<div class="content">
-				<span><%=blog.create.toDateString()%></span>
+				<span style="font-size: 14px;"><i><%=blog.create.toDateString()%></i></span>
 			</div>
 			<div class="description">
 				<p>
@@ -15,12 +16,15 @@
 				</p>
 			</div>
 		</div>
+		<div class="d-flex justify-content-between" style="width:30%;margin-top: 15px;">
 		<form action="/blogs/<%=blog._id%>?_method=DELETE" method="POST">
-			<button class="ui red basic button">
+			<button class="ui red button">
 				DELETE
 			</button>
 		</form>
-		<a href="/blogs/<%=blog._id%>/edit">EDIT</a>
+		<a href="/blogs/<%=blog._id%>/edit"><button class="ui yellow button">EDIT</button></a>
+		</div>
 	</div>
+</div>
 </div>
 <%- include ("partials/footer")%>

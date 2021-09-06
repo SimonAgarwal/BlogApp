@@ -1,6 +1,7 @@
 <%- include ("partials/header")%>
 <%var blog;%>
-<div class="ui main text container segment">
+<div style="padding-top:70px">
+<div class="ui main text container segment" data-aos="flip-left">
 	<div class="ui huge header">
 		New Blog
 	</div>
@@ -14,11 +15,12 @@
 		<div class="field">
 			<textarea name="blog[body]"></textarea>
 		</div>
-		<div class="ui blue basic button">
-			<input type="submit">
+		<div >
+			<input type="submit" class="ui blue button">
 		</div>
 		
 	</form>
+</div>
 </div>
 
 <%- include ("partials/footer")%>
