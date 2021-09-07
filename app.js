@@ -3,8 +3,16 @@ express=require("express");
 app=express();
 bodyParser=require("body-parser");
 mongoose=require("mongoose");
+const config=require("./config/mongo");
 //config
-mongoose.connect('mongodb://localhost:27017/BlogApp'); 
+//mongoose.connect('mongodb://localhost:27017/BlogApp');
+mongoose.connect(config.database,{ useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connection.on('connected',()=>{
+    console.log("Connected to database"+config.database);
+})
+mongoose.connection.on('error',(err)=>{
+    console.log("Not connected"+err);
+}) 
 var methodOverride=require("method-override");
 app.set("view engine","ejs");
 app.use(express.static("public"));
