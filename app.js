@@ -104,6 +104,6 @@ res.redirect("/blogs")
 		}
 	})
 })
-app.listen(3000,function(){
+app.listen(process.env.PORT,function(){
 	console.log("Server started");
 });
