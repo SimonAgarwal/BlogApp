@@ -1,6 +1,7 @@
 var express,app,bodyParser,mongoose;
 express=require("express");
 app=express();
+require('dotenv').config();
 bodyParser=require("body-parser");
 mongoose=require("mongoose");
 const config=require("./config/mongo");

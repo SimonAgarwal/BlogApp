@@ -1,4 +1,4 @@
 module.exports={
-    database: "mongodb+srv://Admin:simon@cluster0.jujtp.mongodb.net/BlogApp?retryWrites=true&w=majority",
-   secret:'SecretSimon'
+    database: process.env.DB_URL,
+   secret:process.env.DB_SECRET
 }
