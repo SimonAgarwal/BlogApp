@@ -7,6 +7,7 @@ mongoose=require("mongoose");
 const config=require("./config/mongo");
 //config
 //mongoose.connect('mongodb://localhost:27017/BlogApp');
+console.log(config.database)
 mongoose.connect(config.database,{ useNewUrlParser: true, useUnifiedTopology: true });
 mongoose.connection.on('connected',()=>{
     console.log("Connected to database"+config.database);
